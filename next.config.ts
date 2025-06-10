@@ -2,7 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [new URL("https://coin-images.coingecko.com/**")],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "coin-images.coingecko.com",
+        pathname: "/**",
+      },
+    ],
+  },
+  env: {
+    NEXT_PUBLIC_JANUS_BASE_URL:
+      process.env.NEXT_PUBLIC_JANUS_BASE_URL || "notset",
   },
 };
 

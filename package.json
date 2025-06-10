@@ -9,7 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-progress": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/language-server": "^0.14.21",
     "@types/lodash": "^4.17.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -25,13 +32,17 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.4",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4.1.8",
     "typescript": "^5"
   }
 }
