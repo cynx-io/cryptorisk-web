@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import EthSearchBar from "@/components/EthSearchBar";
 import Image from "next/image";
+import RiskFlagSection from "@/components/sections/RiskFlagSection";
+import TestDropAnimation from "@/components/sections/TestDropAnimation";
 
 export default async function CoinPage({
   params,
@@ -48,7 +50,8 @@ export default async function CoinPage({
           />
           <div>
             <h1 className="text-2xl font-bold">
-              {token_info.name} ({token_info.symbol.toUpperCase()})
+              {token_info.name}{" "}
+              <Badge>{token_info.symbol.toUpperCase()}</Badge>
             </h1>
             <a
               href={social_info.website}
@@ -122,38 +125,7 @@ export default async function CoinPage({
       </Card>
 
       {/* Risk Flags */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Risk Flags</CardTitle>
-        </CardHeader>
-        <CardContent className="grid grid-cols-2 gap-4">
-          {Object.entries(risk_flags.functions)
-            .filter(([, val]) => val?.value)
-            .map(([key, val]) => (
-              <div key={key}>
-                <Badge variant="destructive">{key}</Badge>
-                <p className="text-sm text-muted-foreground">{val?.reason}</p>
-              </div>
-            ))}
-
-          {!risk_flags.ownership_renounced?.value && (
-            <div>
-              <Badge variant="destructive">Ownership not renounced</Badge>
-              <p className="text-sm text-muted-foreground">
-                {risk_flags.ownership_renounced.reason}
-              </p>
-            </div>
-          )}
-          {risk_flags.liquidity_locked?.severity > 5 && (
-            <div>
-              <Badge variant="destructive">Liquidity Risk</Badge>
-              <p className="text-sm text-muted-foreground">
-                {risk_flags.liquidity_locked.reason}
-              </p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+      <RiskFlagSection risk_flags={risk_flags} />
 
       {/* Holders */}
       <div className="grid grid-cols-2 gap-5">

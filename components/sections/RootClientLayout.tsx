@@ -20,7 +20,7 @@ export default function RootClientLayout() {
     let animationFrameId: number;
 
     // Easing function: linear interpolation (lerp)
-    const ease = 0.1; // 0.1 means 10% closer per frame; smaller is slower easing
+    const ease = 0.05; // 0.1 means 10% closer per frame; smaller is slower easing
 
     const animate = () => {
       setScrollY((current) => {
@@ -47,19 +47,21 @@ export default function RootClientLayout() {
     <div>
       <div className="fixed w-full h-full top-0 left-0 pointer-events-none z-0">
         <FloatingIcon
-            className="top-1/8 left-1/8 -scale-x-100 rotate-45"
+          className="top-1/8 left-1/8 -scale-x-100 -rotate-15"
           style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-            imageSrc="/img/icon3d_bitcoin.png"
+          imageSrc="/img/icon3d_eth.png"
+          width={150}
+          height={150}
         />
         <FloatingIcon
-            className="top-1/2 right-1/8 transform -translate-y-1/2 -rotate-45"
+          className="top-1/2 right-1/8 transform -translate-y-1/2"
           style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-            imageSrc="/img/icon3d_bitcoin.png"
+          imageSrc="/img/icon3d_bitcoin.png"
         />
         <FloatingIcon
-          className="bottom-1/8 left-1/10"
+          className="bottom-1/8 left-1/10 -rotate-15"
           style={{ transform: `translateY(${scrollY * 0.05}px)` }}
-          imageSrc="/img/icon3d_bitcoin.png"
+          imageSrc="/img/icon3d_solana.png"
         />
       </div>
     </div>
