@@ -12,7 +12,6 @@ import {
 import EthSearchBar from "@/components/EthSearchBar";
 import Image from "next/image";
 import RiskFlagSection from "@/components/sections/RiskFlagSection";
-import TestDropAnimation from "@/components/sections/TestDropAnimation";
 
 export default async function CoinPage({
   params,

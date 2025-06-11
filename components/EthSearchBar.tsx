@@ -45,7 +45,7 @@ export default function EthSearchBar() {
     return () => handler.cancel();
   }, [query]);
 
-  const onSelect = (id: string, name: string) => {
+  const onSelect = (id: string) => {
     router.push(`/risk/${id}`);
   };
 
@@ -93,7 +93,7 @@ export default function EthSearchBar() {
                     <CommandItem
                       key={coin.id}
                       value={coin.name}
-                      onSelect={() => onSelect(coin.id, coin.name)}
+                      onSelect={() => onSelect(coin.id)}
                       className="flex items-center gap-2 cursor-pointer"
                     >
                       <Image
