@@ -49,8 +49,7 @@ export default async function CoinPage({
           />
           <div>
             <h1 className="text-2xl font-bold">
-              {token_info.name}{" "}
-              <Badge>{token_info.symbol.toUpperCase()}</Badge>
+              {token_info.name} <Badge>{token_info.symbol.toUpperCase()}</Badge>
             </h1>
             <a
               href={social_info.website}
